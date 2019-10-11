@@ -26,24 +26,23 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function BoxImg(dataFromParent) {
+export default function BoxImg(props) {
     const classes = useStyles();
-    const greeting = dataFromParent;
     return (
         <Grid container spacing={2}>
             <Grid item>
                 <ButtonBase className={classes.image}>
-                    <img className={classes.img} alt="complex" src="https://source.unsplash.com/random" />
+                    <img className={classes.img} alt="complex" src={props.hetelprop.imageUrl} />
                 </ButtonBase>
             </Grid>
             <Grid item xs={12} sm container>
                 <Grid item xs container direction="column" spacing={2}>
                     <Grid item xs>
-                        <h1 gutterBottom variant="subtitle1">
-                        {dataFromParent.name}
-                        </h1>
+                        <h2 gutterBottom variant="subtitle1">
+                        {props.hetelprop.name}
+                        </h2>
                         <Typography variant="body2" color="textSecondary">
-                            ID: 1030114
+                        {props.hetelprop.description}
                          </Typography>
                     </Grid>
                     <Grid item>
@@ -53,7 +52,7 @@ export default function BoxImg(dataFromParent) {
                     </Grid>
                 </Grid>
                 <Grid item>
-                    <Typography variant="subtitle1">$19.00 </Typography>
+                    <Typography variant="subtitle1">{props.hetelprop.price} </Typography>
                 </Grid>
             </Grid>
         </Grid>

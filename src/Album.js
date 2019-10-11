@@ -105,7 +105,7 @@ export default function Album() {
                         {hotels.map(hotel => (
                             <Grid item key={hotel} xs={12} sm={6} md={6}>
                                 <Paper className={classes.card}>
-                                    <BoxImg dataFromParent = {hotel} ></BoxImg>
+                                    <BoxImg hetelprop = {hotel} ></BoxImg>
                                 </Paper>
                             </Grid>
                         ))}

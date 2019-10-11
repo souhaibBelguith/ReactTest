@@ -17,13 +17,13 @@ const list =[
  
  {
  
-   "name": "four seasons",
+   "name": "Hotel Royal - Evian Resort",
  
-   "description": "Four Seasons Hotels and Resorts est un groupe hôtelier de luxe dont le siège se trouve à Toronto en Ontario. La société a été créée par Isadore “Issy” Sharp en 1960 avec l'ouverture du premier First Season à Toronto.",
+   "description": "L’Évian Resort est un complexe hôtelier situé à Évian-les-Bains en Haute-SavoieInstallé sur la rive française du lac Léman et au cœur d’un parc de plus de 19 hectares, il est constitué de l Hôtel Royal 5 étoiles Palace et d un restaurant étoilé Les Fresques, de l’Hôtel Ermitage, demeure de famille 4 étoiles.",
  
-   "price": "180€",
+   "price": "200€",
  
-   "imageUrl": "https://www.google.com/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwibg-G_s5TlAhVRDmMBHeepDXsQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F496170083937982306%2F&psig=AOvVaw2v3x5E2fNpjbv4q0mskmo5&ust=1570890022843488"
+   "imageUrl": "https://static-new.lhw.com/HotelImages/Final/LW0609/lw0609_64163780_720x450.jpg?01AD=3oBDPD1_a3GJz2iLKhCNp_JrxuA3HZ4A-IXKLnk7r2wAABTOx_9TLow&01RI=1785AA101C39C53&01NA="
  
  },
  {
@@ -34,7 +34,7 @@ const list =[
 
   "price": "180€",
 
-  "imageUrl": "https://www.google.com/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwibg-G_s5TlAhVRDmMBHeepDXsQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F496170083937982306%2F&psig=AOvVaw2v3x5E2fNpjbv4q0mskmo5&ust=1570890022843488"
+  "imageUrl": "https://c8.alamy.com/compfr/ecj5x2/france-paris-lavenue-georges-v-lhotel-four-seasons-george-v-ecj5x2.jpg"
 
 }
  
