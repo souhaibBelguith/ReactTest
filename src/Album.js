@@ -9,8 +9,9 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
-import {useSelector, useDispatch} from 'react-redux';
+import { useSelector } from 'react-redux';
 import BoxImg from './BoxImage';
+import ReservedBoxImg from './reservedBoxImg';
 
 
 const useStyles = makeStyles(theme => ({
@@ -43,8 +44,8 @@ const useStyles = makeStyles(theme => ({
         marginTop: theme.spacing(4),
     },
     cardGrid: {
-        paddingTop: theme.spacing(8),
-        paddingBottom: theme.spacing(8),
+        paddingTop: theme.spacing(2),
+        paddingBottom: theme.spacing(2),
     },
     card: {
         height: '100%',
@@ -55,16 +56,17 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: theme.palette.background.paper,
         padding: theme.spacing(6),
     },
+    tab: {
+        'border-collapse': 'collapse',
+    },
 }));
 
-
-const cards = [1, 2, 3];
-
-
 export default function Album() {
-    const hotels =useSelector(state => state.allHotels);
+    const hotels = useSelector(state => state.allHotels);
+    const reservedHotel = useSelector(state => state.reservedHotel);
+    //compare the list for hotels and the list of reserved hotel 
+    let dispoHotel = hotels.filter(x => !reservedHotel.includes(x));
     const classes = useStyles();
-
 
     return (
         <React.Fragment>
@@ -99,18 +101,41 @@ export default function Album() {
                         </div>
                     </Container>
                 </div>
-                <Container className={classes.cardGrid} maxWidth="md">
-                    {/* End hero unit */}
-                    <Grid direction="column" container spacing={4}>
-                        {hotels.map(hotel => (
-                            <Grid item key={hotel} xs={12} sm={6} md={6}>
-                                <Paper className={classes.card}>
-                                    <BoxImg hetelprop = {hotel} ></BoxImg>
-                                </Paper>
+                <table className={classes.tab} >
+                <tr>
+                    <th width="50%" id="all">Hotel List</th>
+                    <th width="50%" id="reseved">Reserved hotel </th>
+                </tr>
+                <tr>
+                    <td width="50%" >
+                        <Container className={classes.cardGrid} maxWidth="md" >
+                            {/* End hero unit */}
+                            <Grid direction="column" container spacing={2}>
+                                {dispoHotel.map(hotel => (
+                                    <Grid item key={hotel} xs={12} sm={6} md={6}>
+                                        <Paper className={classes.card}>
+                                            <BoxImg hetelprop={hotel} ></BoxImg>
+                                        </Paper>
+                                    </Grid>
+                                ))}
                             </Grid>
-                        ))}
-                    </Grid>
-                </Container>
+                        </Container>
+                    </td>
+                    <td width="50%" >
+                        <Container className={classes.cardGrid} maxWidth="md">
+                            <Grid direction="column" container spacing={2}>
+                                {reservedHotel.map(hotel => (
+                                    <Grid item key={hotel} xs={12} sm={6} md={6}>
+                                        <Paper className={classes.card}>
+                                            <ReservedBoxImg hetelprop={hotel} ></ReservedBoxImg>
+                                        </Paper>
+                                    </Grid>
+                                ))}
+                            </Grid>
+                        </Container>
+                    </td>
+                </tr>
+                </table>
             </main>
             {/* Footer */}
             <footer className={classes.footer}>
@@ -122,3 +147,15 @@ export default function Album() {
         </React.Fragment>
     );
 }
+
+/*<Container className={classes.cardGrid} maxWidth="md">
+                            <Grid direction="column" container spacing={2}>
+                                {reservedHotel.map(hotel => (
+                                    <Grid item key={hotel} xs={12} sm={6} md={6}>
+                                        <Paper className={classes.card}>
+                                            <BoxImg hetelprop={hotel} ></BoxImg>
+                                        </Paper>
+                                    </Grid>
+                                ))}
+                            </Grid>
+                        </Container> */

@@ -6,7 +6,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import { reserveHotel } from './actions';
 import { useDispatch } from 'react-redux';
-import FormDialog from './Form'
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -30,18 +29,7 @@ const useStyles = makeStyles(theme => ({
 }));
 const steps = ['Shipping address', 'Payment details'];
 
-function getStepContent(step) {
-    switch (step) {
-        case 0:
-            return <FormDialog />;
-        case 1:
-            return <FormDialog />;
-        default:
-            return <FormDialog />;
-    }
-}
-
-export default function BoxImg(props) {
+export default function ReservedBoxImg(props) {
     const dispatch = useDispatch();
     const classes = useStyles();
     return (
@@ -57,13 +45,6 @@ export default function BoxImg(props) {
                         <h2 gutterBottom variant="subtitle1">
                             {props.hetelprop.name}
                         </h2>
-                        <Typography variant="body2" color="textSecondary">
-                            {props.hetelprop.description}
-                        </Typography>
-                    </Grid>
-                    <Grid item>
-                        <button onClick={() => dispatch(reserveHotel(props.hetelprop))}>ADD</button>
-                        
                     </Grid>
                 </Grid>
                 <Grid item>

@@ -1,12 +1,13 @@
-export const increment=nbr=>{
+export const reserveHotel=(nbr)=>{
     return {
-        type: 'INCREMENT',
+        type: 'getHotelData',
         data: nbr
     };
 };
 
-export const decrement=()=>{
+export const listHotel=()=>{
     return {
-        type: 'DECREMENT'
-    }
+
+        type: 'getHotels'
+    };
 };
