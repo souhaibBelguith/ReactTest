@@ -20,3 +20,27 @@
 .App-link {
   color: #09d3ac;
 }
+
+
+.rcorners3 {
+  border-radius: 15px 50px;
+  background: #73AD21;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.5fr 1.3fr;
+  grid-template-areas: "HotelListTitle HotelListTitle HotelListTitle ReservedTitle" "HotelListBox HotelListBox HotelListBox ReservedListBox" "HotelListBox HotelListBox HotelListBox ReservedListBox";
+}
+
+.HotelListTitle { grid-area: HotelListTitle; }
+
+.ReservedTitle { grid-area: ReservedTitle; }
+
+.HotelListBox { grid-area: HotelListBox; }
+
+.ReservedListBox { grid-area: ReservedListBox; }

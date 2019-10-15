@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {useSelector, useDispatch} from 'react-redux';
 import Box from '@material-ui/core/Button';
-import Album from './Album';
+import Album from './Album2';
 
 
 function App() {

@@ -59,6 +59,10 @@ const useStyles = makeStyles(theme => ({
     tab: {
         'border-collapse': 'collapse',
     },
+    cardHeader: {
+        backgroundColor: theme.palette.grey[200],
+        height: '100%',
+    },
 }));
 
 export default function Album() {
@@ -67,6 +71,8 @@ export default function Album() {
     //compare the list for hotels and the list of reserved hotel 
     let dispoHotel = hotels.filter(x => !reservedHotel.includes(x));
     const classes = useStyles();
+
+
 
     return (
         <React.Fragment>
@@ -79,53 +85,32 @@ export default function Album() {
                 </Toolbar>
             </AppBar>
             <main>
-                {/* Hero unit */}
-                <div className={classes.heroContent}>
-                    <Container maxWidth="sm">
-                        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                            Hotel List
-                        </Typography>
-                        <div className={classes.heroButtons}>
-                            <Grid container spacing={2} justify="center">
-                                <Grid item>
-                                    <Button variant="contained" color="primary">
-                                        Main call to action
-                                    </Button>
-                                </Grid>
-                                <Grid item>
-                                    <Button variant="outlined" color="primary">
-                                        Secondary action
-                                    </Button>
-                                </Grid>
+                <div className="grid-container">
+                    <div className="HotelListTitle">
+
+                    </div>
+                    <div className="ReservedTitle">
+                        <h4>PANIER</h4>
+                    </div>
+                    <div className="HotelListBox">
+                        <Container className={classes.cardGrid} maxWidth="md" >
+                            <Grid direction="column" container spacing={2}>
+                                {dispoHotel.map((hotel, index) => (
+                                    <Grid item key={index} xs={12} sm={6} md={6}>
+                                        <Paper className={classes.card}>
+                                            <BoxImg hetelprop={hotel} ></BoxImg>
+                                        </Paper>
+                                    </Grid>
+                                ))}
                             </Grid>
-                        </div>
-                    </Container>
-                </div>
-                <table className={classes.tab} >
-                    <tr>
-                        <th width="50%" id="all">Hotel List</th>
-                        <th width="50%" id="reseved">Reserved hotel </th>
-                    </tr>
-                    <tr>
-                        <td width="50%" >
-                            <Container className={classes.cardGrid} maxWidth="md" >
-                                {/* End hero unit */}
-                                <Grid direction="column" container spacing={2}>
-                                    {dispoHotel.map(hotel => (
-                                        <Grid item key={hotel} xs={12} sm={6} md={6}>
-                                            <Paper className={classes.card}>
-                                                <BoxImg hetelprop={hotel} ></BoxImg>
-                                            </Paper>
-                                        </Grid>
-                                    ))}
-                                </Grid>
-                            </Container>
-                        </td>
-                        <td width="50%" >
+                        </Container>
+                    </div>
+                    <div className="ReservedListBox">
+                        <div className={classes.cardHeader}>
                             <Container className={classes.cardGrid} maxWidth="md">
                                 <Grid direction="column" container spacing={2}>
-                                    {reservedHotel.map(hotel => (
-                                        <Grid item key={hotel} xs={12} sm={6} md={6}>
+                                    {reservedHotel.map((hotel, index) => (
+                                        <Grid item key={index} xs={12} sm={6} md={6}>
                                             <Paper className={classes.card}>
                                                 <ReservedBoxImg hetelprop={hotel} ></ReservedBoxImg>
                                             </Paper>
@@ -133,17 +118,10 @@ export default function Album() {
                                     ))}
                                 </Grid>
                             </Container>
-                        </td>
-                    </tr>
-                </table>
+                        </div>
+                    </div>
+                </div>
             </main>
-            {/* Footer */}
-            <footer className={classes.footer}>
-                <Typography variant="h6" align="center" gutterBottom>
-                    Footer
-                </Typography>
-            </footer>
-            {/* End footer */}
         </React.Fragment>
     );
 }
@@ -159,3 +137,21 @@ export default function Album() {
                                 ))}
                             </Grid>
                         </Container> */
+/* Hero unit <div className={classes.heroContent}>
+<Container maxWidth="sm">
+<div className={classes.heroButtons}>
+    <Grid container spacing={2} justify="center">
+        <Grid item>
+            <Button variant="contained" color="primary">
+                Main call to action
+            </Button>
+        </Grid>
+        <Grid item>
+            <Button variant="outlined" color="primary">
+                Secondary action
+            </Button>
+        </Grid>
+    </Grid>
+</div>
+</Container>
+</div>*/

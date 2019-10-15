@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     },
     image: {
         width: 128,
-        height: 128,
+        height: '100%',
     },
     img: {
         margin: 'auto',
@@ -27,6 +27,7 @@ const useStyles = makeStyles(theme => ({
         maxWidth: '100%',
         maxHeight: '100%',
     },
+    
 }));
 const steps = ['Shipping address', 'Payment details'];
 
@@ -45,31 +46,29 @@ export default function BoxImg(props) {
     const dispatch = useDispatch();
     const classes = useStyles();
     return (
-        <Grid container spacing={2}>
-            <Grid item>
-                <ButtonBase className={classes.image}>
-                    <img className={classes.image} alt="complex" src={props.hetelprop.imageUrl} />
-                </ButtonBase>
-            </Grid>
-            <Grid item xs={12} sm container>
-                <Grid item xs container direction="column" spacing={2}>
-                    <Grid item xs>
-                        <h2 gutterBottom variant="subtitle1">
-                            {props.hetelprop.name}
-                        </h2>
-                        <Typography variant="body2" color="textSecondary">
-                            {props.hetelprop.description}
-                        </Typography>
+        <div  onClick={() => dispatch(reserveHotel(props.hetelprop))}>
+            <Grid container spacing={2}>
+                <Grid item>
+                    <ButtonBase className={classes.image}>
+                        <img className={classes.image} alt="complex" src={props.hetelprop.imageUrl} />
+                    </ButtonBase>
+                </Grid>
+                <Grid item xs={12} sm container>
+                    <Grid item xs container direction="column" spacing={2}>
+                        <Grid item xs>
+                            <Typography gutterBottom variant="h6">
+                                {props.hetelprop.name}
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary">
+                                {props.hetelprop.description}
+                            </Typography>
+                        </Grid>
                     </Grid>
                     <Grid item>
-                        <button onClick={() => dispatch(reserveHotel(props.hetelprop))}>ADD</button>
-                        
+                        <Typography variant="subtitle1">{props.hetelprop.price} </Typography>
                     </Grid>
                 </Grid>
-                <Grid item>
-                    <Typography variant="subtitle1">{props.hetelprop.price} </Typography>
-                </Grid>
             </Grid>
-        </Grid>
+        </div>
     );
 }

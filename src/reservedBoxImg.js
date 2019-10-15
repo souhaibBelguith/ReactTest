@@ -12,13 +12,13 @@ const useStyles = makeStyles(theme => ({
         flexGrow: 1,
     },
     paper: {
-        padding: theme.spacing(2),
+        padding: theme.spacing(1),
         margin: 'auto',
-        maxWidth: 600,
+        maxWidth: 800,
     },
     image: {
-        width: 128,
-        height: 128,
+        width: '100%',
+        height: 100,
     },
     img: {
         margin: 'auto',
@@ -33,7 +33,7 @@ export default function ReservedBoxImg(props) {
     const dispatch = useDispatch();
     const classes = useStyles();
     return (
-        <Grid container spacing={2}>
+        <Grid direction="column" container spacing={1}>
             <Grid item>
                 <ButtonBase className={classes.image}>
                     <img className={classes.image} alt="complex" src={props.hetelprop.imageUrl} />
@@ -42,13 +42,13 @@ export default function ReservedBoxImg(props) {
             <Grid item xs={12} sm container>
                 <Grid item xs container direction="column" spacing={2}>
                     <Grid item xs>
-                        <h2 gutterBottom variant="subtitle1">
+                        <Typography gutterBottom variant="h6">
                             {props.hetelprop.name}
-                        </h2>
+                        </Typography>
                     </Grid>
                 </Grid>
                 <Grid item>
-                    <Typography variant="subtitle1">{props.hetelprop.price} </Typography>
+                    <Typography variant="subtitle1">{props.hetelprop.price } </Typography>
                 </Grid>
             </Grid>
         </Grid>

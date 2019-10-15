@@ -1,7 +1,7 @@
-export const reserveHotel=(nbr)=>{
+export const reserveHotel=(hotel)=>{
     return {
         type: 'getHotelData',
-        data: nbr
+        data: hotel
     };
 };
 
