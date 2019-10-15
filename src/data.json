@@ -9,28 +9,16 @@
     "description": "Hilton est un groupe hôtelier américain fondé par Conrad Hilton au début du XXᵉ siècle.",
     "price": "120€",
     "imageUrl": "https://foto-origin.hrsstatic.com/foto/0/0/6/8/006878/006878_a_24853.jpg"
-
   },
-
   {
-
     "name": "Evian Resort",
-
     "description": "L’Évian Resort est un complexe hôtelier situé à Évian-les-Bains en Haute-Savoie.",
-
     "price": "200€",
-
-    "imageUrl": "https://static-new.lhw.com/HotelImages/Final/LW0609/lw0609_64163780_720x450.jpg?01AD=3oBDPD1_a3GJz2iLKhCNp_JrxuA3HZ4A-IXKLnk7r2wAABTOx_9TLow&01RI=1785AA101C39C53&01NA="
-
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTibiBLCAEDfaCBHfZRm7pFKYkQxPQ65QqCBQ7YMdP6CZeGCYI"
   },
   {
-
     "name": "four seasons",
-
     "description": "Four Seasons Hotels and Resorts est un groupe hôtelier de luxe.",
-
     "price": "180€",
-
-    "imageUrl": "https://c8.alamy.com/compfr/ecj5x2/france-paris-lavenue-georges-v-lhotel-four-seasons-george-v-ecj5x2.jpg"
-
+    "imageUrl": "https://www.thenational.ae/image/policy:1.43212:1498921082/image/jpeg.jpg?f=1x1&w=128&$p$f$w=cf769b6"
   }]
