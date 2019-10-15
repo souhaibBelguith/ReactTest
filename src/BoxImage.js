@@ -6,7 +6,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import { reserveHotel } from './actions';
 import { useDispatch } from 'react-redux';
-import FormDialog from './Form'
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -29,18 +28,6 @@ const useStyles = makeStyles(theme => ({
     },
     
 }));
-const steps = ['Shipping address', 'Payment details'];
-
-function getStepContent(step) {
-    switch (step) {
-        case 0:
-            return <FormDialog />;
-        case 1:
-            return <FormDialog />;
-        default:
-            return <FormDialog />;
-    }
-}
 
 export default function BoxImg(props) {
     const dispatch = useDispatch();

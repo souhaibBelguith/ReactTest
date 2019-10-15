@@ -1,11 +1,8 @@
-
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
-import { reserveHotel } from './actions';
-import { useDispatch } from 'react-redux';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -27,10 +24,7 @@ const useStyles = makeStyles(theme => ({
         maxHeight: '100%',
     },
 }));
-const steps = ['Shipping address', 'Payment details'];
-
 export default function ReservedBoxImg(props) {
-    const dispatch = useDispatch();
     const classes = useStyles();
     return (
         <Grid direction="column" container spacing={1}>
