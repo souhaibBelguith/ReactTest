@@ -11,6 +11,7 @@ import Paper from '@material-ui/core/Paper';
 import { useSelector } from 'react-redux';
 import BoxImg from './BoxImage';
 import ReservedBoxImg from './reservedBoxImg';
+import PriceBox from './PriceBox';
 
 
 const useStyles = makeStyles(theme => ({
@@ -70,8 +71,11 @@ export default function Album() {
     //compare the list for hotels and the list of reserved hotel 
     let dispoHotel = hotels.filter(x => !reservedHotel.includes(x));
     const classes = useStyles();
+    let Allprice = 0;
 
-
+    reservedHotel.map((hotel, index) => (
+        Allprice= Allprice + parseInt(hotel.price)
+     ))
 
     return (
         <React.Fragment>
@@ -115,6 +119,13 @@ export default function Album() {
                                             </Paper>
                                         </Grid>
                                     ))}
+                                </Grid>
+                                <Grid direction="column" container spacing={2}>
+                                    <Grid item xs={12} sm={6} md={6}>
+                                        <Paper className={classes.card}>
+                                            <PriceBox hetelprop={Allprice} ></PriceBox>
+                                        </Paper>
+                                    </Grid>
                                 </Grid>
                             </Container>
                         </div>

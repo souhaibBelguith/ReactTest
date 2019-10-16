@@ -23,6 +23,9 @@ const useStyles = makeStyles(theme => ({
         maxWidth: '100%',
         maxHeight: '100%',
     },
+    h5:{
+        style: 'font-size:10vw',
+    }
 }));
 export default function ReservedBoxImg(props) {
     const classes = useStyles();
@@ -36,9 +39,8 @@ export default function ReservedBoxImg(props) {
             <Grid item xs={12} sm container>
                 <Grid item xs container direction="column" spacing={2}>
                     <Grid item xs>
-                        <Typography gutterBottom variant="h6">
-                            {props.hetelprop.name}
-                        </Typography>
+                        
+                        <h5> {props.hetelprop.name}</h5>
                     </Grid>
                 </Grid>
                 <Grid item>
