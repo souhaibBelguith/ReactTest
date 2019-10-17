@@ -11,3 +11,11 @@ export const listHotel=()=>{
         type: 'getHotels'
     };
 };
+
+export const nbrNuits=(nbr)=>{
+    return {
+
+        type: 'getNbrNuits',
+        data : nbr
+    };
+};

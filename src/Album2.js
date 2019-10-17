@@ -14,6 +14,7 @@ import ReservedBoxImg from './reservedBoxImg';
 import PriceBox from './PriceBox';
 
 
+
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
@@ -65,17 +66,20 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
+
+
 export default function Album() {
     const hotels = useSelector(state => state.allHotels);
     const reservedHotel = useSelector(state => state.reservedHotel);
+    const priceList = useSelector(state => state.NbrNuits);
     //compare the list for hotels and the list of reserved hotel 
     let dispoHotel = hotels.filter(x => !reservedHotel.includes(x));
     const classes = useStyles();
     let Allprice = 0;
-
-    reservedHotel.map((hotel, index) => (
-        Allprice= Allprice + parseInt(hotel.price)
-     ))
+    
+    priceList.map((hotelPrice, index) => (
+        Allprice = Allprice + (hotelPrice.price * hotelPrice.nbrNuits)
+    ))
 
     return (
         <React.Fragment>
@@ -89,9 +93,7 @@ export default function Album() {
             </AppBar>
             <main>
                 <div className="grid-container">
-                    <div className="HotelListTitle">
-
-                    </div>
+                    <div className="HotelListTitle"></div>
                     <div className="ReservedTitle">
                         <h4>PANIER</h4>
                     </div>
@@ -101,7 +103,9 @@ export default function Album() {
                                 {dispoHotel.map((hotel, index) => (
                                     <Grid item key={index} xs={12} sm={6} md={6}>
                                         <Paper className={classes.card}>
-                                            <BoxImg hetelprop={hotel} ></BoxImg>
+                                            <div >
+                                                <BoxImg hetelprop={hotel} ></BoxImg>
+                                            </div>
                                         </Paper>
                                     </Grid>
                                 ))}
@@ -112,10 +116,10 @@ export default function Album() {
                         <div className={classes.cardHeader}>
                             <Container className={classes.cardGrid} maxWidth="md">
                                 <Grid direction="column" container spacing={2}>
-                                    {reservedHotel.map((hotel, index) => (
+                                    {priceList.map((hotel, index) => (
                                         <Grid item key={index} xs={12} sm={6} md={6}>
                                             <Paper className={classes.card}>
-                                                <ReservedBoxImg hetelprop={hotel} ></ReservedBoxImg>
+                                                <ReservedBoxImg  hetelprop={hotel} ></ReservedBoxImg>
                                             </Paper>
                                         </Grid>
                                     ))}
@@ -123,7 +127,7 @@ export default function Album() {
                                 <Grid direction="column" container spacing={2}>
                                     <Grid item xs={12} sm={6} md={6}>
                                         <Paper className={classes.card}>
-                                            <PriceBox hetelprop={Allprice} ></PriceBox>
+                                            <PriceBox hel={priceList}  hetelprop={Allprice} ></PriceBox>
                                         </Paper>
                                     </Grid>
                                 </Grid>
@@ -131,37 +135,8 @@ export default function Album() {
                         </div>
                     </div>
                 </div>
+
             </main>
         </React.Fragment>
     );
 }
-
-/*<Container className={classes.cardGrid} maxWidth="md">
-                            <Grid direction="column" container spacing={2}>
-                                {reservedHotel.map(hotel => (
-                                    <Grid item key={hotel} xs={12} sm={6} md={6}>
-                                        <Paper className={classes.card}>
-                                            <BoxImg hetelprop={hotel} ></BoxImg>
-                                        </Paper>
-                                    </Grid>
-                                ))}
-                            </Grid>
-                        </Container> */
-/* Hero unit <div className={classes.heroContent}>
-<Container maxWidth="sm">
-<div className={classes.heroButtons}>
-    <Grid container spacing={2} justify="center">
-        <Grid item>
-            <Button variant="contained" color="primary">
-                Main call to action
-            </Button>
-        </Grid>
-        <Grid item>
-            <Button variant="outlined" color="primary">
-                Secondary action
-            </Button>
-        </Grid>
-    </Grid>
-</div>
-</Container>
-</div>*/

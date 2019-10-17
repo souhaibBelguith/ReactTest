@@ -29,6 +29,7 @@ const useStyles = makeStyles(theme => ({
 }));
 export default function ReservedBoxImg(props) {
     const classes = useStyles();
+    
     return (
         <Grid direction="column" container spacing={1}>
             <Grid item>
@@ -44,8 +45,8 @@ export default function ReservedBoxImg(props) {
                     </Grid>
                 </Grid>
                 <Grid item>
-                    <Typography variant="subtitle1">{props.hetelprop.price } </Typography>
                 </Grid>
+                <Typography variant="subtitle1">{props.hetelprop.price}€ * {props.hetelprop.nbrNuits}Nuits </Typography>
             </Grid>
         </Grid>
     );
