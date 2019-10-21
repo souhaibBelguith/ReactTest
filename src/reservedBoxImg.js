@@ -40,7 +40,6 @@ export default function ReservedBoxImg(props) {
             <Grid item xs={12} sm container>
                 <Grid item xs container direction="column" spacing={2}>
                     <Grid item xs>
-                        
                         <h5> {props.hetelprop.name}</h5>
                     </Grid>
                 </Grid>

@@ -15,6 +15,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
 
 const useStyles = makeStyles(theme => ({
@@ -52,7 +53,6 @@ export default function BoxImg(props) {
     const handleClose = () => {
         setOpen(false);
     };
-    //let Data = [];
 
     return (
         <div >
@@ -77,7 +77,6 @@ export default function BoxImg(props) {
                         <Typography variant="subtitle1">{props.hetelprop.price} </Typography>
                     </Grid>
                 </Grid>
-
             </Grid>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
@@ -85,14 +84,22 @@ export default function BoxImg(props) {
                     <DialogContentText>
                         Veuillez saisir le nombre de nuits à reserver :
                         </DialogContentText>
-                    <TextField autoFocus margin="dense" id="number" label="Nombre De Nuit" type="number" fullWidth />
+                        <output id="component-error-text" />
+                        <FormHelperText id="h"></FormHelperText>
+                    <TextField autoFocus margin="dense" id="number" label="Nombre De Nuit" type="number"  fullWidth />
+                    
                     <Button onClick={() => {
+                        if((parseInt(document.getElementById("number").value))>=1){
                         handleClose(); dispatch(reserveHotel(props.hetelprop), dispatch(nbrNuits({
                             imageUrl: props.hetelprop.imageUrl,
                             name: props.hetelprop.name,
                             price: parseInt(props.hetelprop.price),
                             nbrNuits: parseInt(document.getElementById("number").value)
-                        })))
+                        })))}
+                        else {
+                            document.getElementById('component-error-text').value = 'Veuillez saisir un nombre valide';
+                            document.getElementById('component-error-text').style = 'color:red';
+                        }
                     }}
                         color="primary">
                         Valider

@@ -32,7 +32,7 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 4fr 1fr 2fr;
   grid-template-rows: 0.2fr 1.5fr 1.3fr;
   grid-template-areas: "HotelListTitle HotelListTitle HotelListTitle ReservedTitle" "HotelListBox HotelListBox HotelListBox ReservedListBox" "HotelListBox HotelListBox HotelListBox ReservedListBox";
 }

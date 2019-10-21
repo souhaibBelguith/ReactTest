@@ -14,7 +14,6 @@ import ReservedBoxImg from './reservedBoxImg';
 import PriceBox from './PriceBox';
 
 
-
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
@@ -41,12 +40,10 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: theme.palette.background.paper,
         padding: theme.spacing(8, 0, 6),
     },
-    heroButtons: {
-        marginTop: theme.spacing(4),
-    },
     cardGrid: {
         paddingTop: theme.spacing(2),
         paddingBottom: theme.spacing(2),
+        marginRight: 6,
     },
     card: {
         height: '100%',
